@@ -41,10 +41,10 @@ const Packages = () => {
 
     return (
         <div className='container'>
-            <br />
-            <div>
-                <br />
-                <input className='searchStyle App' onChange={handleSearch}  placeholder='Search Destination Here' type="text"  ></input>
+            <br /> <br />
+            <div className=''>
+                
+                <input className='searchStyle  App' onChange={handleSearch}  placeholder='Search Destination Here' type="text"  ></input>
                 <br />
             </div>
             {/* showing packages */}

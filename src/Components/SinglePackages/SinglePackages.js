@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import './SinglePackages.css';
 import { Link, useNavigate  } from 'react-router-dom';
+import { FcViewDetails } from 'react-icons/fc';
 
 const SinglePackages = ({pkg}) => {
     const {_id, code,name, duration, price, img} = pkg;
@@ -21,7 +22,7 @@ const SinglePackages = ({pkg}) => {
                     <h6 className='text-success'> {name} </h6>
                     <h6> BDT {price} per person </h6>
                     <p>{duration}</p>
-                    <Button size='sm' onClick={handleView} > View Details</Button>
+                    <Button size='sm' onClick={handleView} > <FcViewDetails></FcViewDetails>  View Details</Button>
                 </Card.Body>
         </Card>
         </div>

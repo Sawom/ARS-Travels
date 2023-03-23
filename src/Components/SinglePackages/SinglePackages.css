@@ -1,0 +1,20 @@
+.cardStyless{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px 3px  lightgray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+}
+.pStyle{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.product{
+    width: 300px;
+    height: 510px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    position: relative;
+}

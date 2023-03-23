@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaWhatsapp , FaYoutube , FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaWhatsapp , FaPhone, FaRegEnvelope, FaYoutube , FaTwitter, FaLinkedin } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -26,17 +26,17 @@ const Footer = () => {
 
 				<div>
 					<i className="fa fa-map-marker"></i>
-					<p><span> Head Office: 102/1 Motijheel Dhaka</span> Solana Beach, California</p>
+					<p><span> Head Office: 102/1 Motijheel Dhaka</span> </p>
 				</div>
 
-				<div>
-					<i className="fa fa-phone"></i>
+				<div className="footer-icons">
+					<a > <FaPhone></FaPhone> </a> 
 					<p>Hotline : 01515000000</p>
 				</div>
 
-				<div>
-					<i className="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@company.com</a></p>
+				<div className="footer-icons" >
+					<a  > <FaRegEnvelope ></FaRegEnvelope> </a>
+					<p> support@company.com </p>
 				</div>
 
 			</div>
@@ -47,7 +47,7 @@ const Footer = () => {
 					<span> Stay Connected With Us </span>
 				</p>
 
-				<div class="footer-icons">
+				<div className="footer-icons">
 					<a href="#"> <FaFacebook></FaFacebook> </a>
 					<a href="#"> <FaWhatsapp></FaWhatsapp> </a>
 					<a href="#"> <FaYoutube></FaYoutube> </a>

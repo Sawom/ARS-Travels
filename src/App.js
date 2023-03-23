@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Components/Shared/Header/Header';
 import Packages from './Components/Packages/Packages';
 import PackageDetails from './Components/PackageDetails/PackageDetails';
+import Footer from './Components/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path='/packages' element={ <Packages></Packages> }  ></Route>
         <Route path='packinfo/:id' element={ <PackageDetails></PackageDetails> } ></Route>
       </Routes>
-      
+      <Footer></Footer> 
     </div>
   );
 }

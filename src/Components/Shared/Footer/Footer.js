@@ -23,7 +23,7 @@ const Footer = () => {
 			</div>
 
 			<div className="footer-center">
-
+				<p>Contact Us</p>
 				<div className="footer-icons">
 					<a href="#" > <FaAddressCard></FaAddressCard> </a>
 					<p><span> Head Office: 102/1 Motijheel Dhaka</span> </p>

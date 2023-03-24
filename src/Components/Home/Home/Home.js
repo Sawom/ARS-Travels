@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Bannar from '../Bannar/Bannar';
+import FAQ from '../FAQ/FAQ';
 import Menues from '../Menues/Menues';
 
 const Home = () => {
@@ -15,7 +16,9 @@ const Home = () => {
                     <Col lg="4" md='4'  >
                         <Menues></Menues>
                     </Col>
-                </Row>
+                </Row> 
+                <br /> <br />
+                <FAQ></FAQ>
         </div>
     );
 };

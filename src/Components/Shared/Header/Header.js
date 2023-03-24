@@ -3,8 +3,8 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import LOGO from '../../../images/logo.png'
-import auth from '../../../Firebase/Firebase'
+import LOGO from '../../../images/logo.png';
+import auth from '../../../Firebase/Firebase';
 import './Header.css'
 
 const Header = () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaWhatsapp , FaPhone, FaRegEnvelope, FaYoutube , FaTwitter, FaLinkedin, FaAddressCard } from 'react-icons/fa';
+import LOGO from '../../../images/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,8 +10,8 @@ const Footer = () => {
             <footer className="footer-distributed">
 
 			<div className="footer-left">
-
-				<h3>Company<span>logo</span></h3>
+				<img height={200} src={LOGO} alt="" />
+				
 
 				<p class="footer-links">
 					<a href="#" className="link-1">Home</a>
@@ -36,7 +37,7 @@ const Footer = () => {
 
 				<div className="footer-icons" >
 					<a href="#" > <FaRegEnvelope ></FaRegEnvelope> </a>
-					<p> support@company.com </p>
+					<p> support@ars.com </p>
 				</div>
 
 			</div>

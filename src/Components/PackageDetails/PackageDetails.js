@@ -23,6 +23,7 @@ const PackageDetails = () => {
                     <h6>Tour Type : {pack.tourType} </h6>
                     <h6> Duration : {pack.duration} </h6>
                     <h6>Location : {pack.location} </h6>
+                    <h4 className='text-success' >DAY WISE ITINERARY</h4>
                     <p> <b> {pack.dayOneTitle} </b> </p>
                     <p> {pack.dayOneText} </p>
                     <p> <b> {pack.dayTwoTitle} </b> </p>

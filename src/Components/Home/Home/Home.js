@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Bannar from '../Bannar/Bannar';
+import Destinations from '../Destinations/Destinations';
 import FAQ from '../FAQ/FAQ';
 import Menues from '../Menues/Menues';
 
@@ -17,6 +18,8 @@ const Home = () => {
                         <Menues></Menues>
                     </Col>
                 </Row> 
+                <br /> <br />
+                <Destinations></Destinations>
                 <br /> <br />
                 <FAQ></FAQ>
         </div>

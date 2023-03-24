@@ -6,6 +6,7 @@ import Header from './Components/Shared/Header/Header';
 import Packages from './Components/Packages/Packages';
 import PackageDetails from './Components/PackageDetails/PackageDetails';
 import Footer from './Components/Shared/Footer/Footer';
+import About from './Components/About/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={ <Home></Home> } ></Route>
         <Route path='/home' element={ <Home></Home> } ></Route>
+        <Route path='/about' element={ <About></About> } ></Route>
         <Route path='/packages' element={ <Packages></Packages> }  ></Route>
         <Route path='packinfo/:id' element={ <PackageDetails></PackageDetails> } ></Route>
       </Routes>

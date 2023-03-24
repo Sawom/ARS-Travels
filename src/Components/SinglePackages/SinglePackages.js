@@ -24,7 +24,7 @@ const SinglePackages = ({pkg}) => {
                     <p>{duration}</p>
                     <Button size='sm' onClick={handleView} > <FcViewDetails></FcViewDetails>  View Details</Button>
                 </Card.Body>
-        </Card>
+            </Card>
         </div>
     );
 };

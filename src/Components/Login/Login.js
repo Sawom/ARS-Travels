@@ -1,5 +1,8 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { FaSignInAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 
 const Login = () => {
@@ -23,8 +26,11 @@ const Login = () => {
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
-                        Login
-                    </Button>
+                        <FaSignInAlt></FaSignInAlt> Login
+                    </Button> 
+                    <br /> <br />
+                    <p>New to ARS Travels? <Link as={Link} className='txt' to="/register">Register Here</Link>  </p>
+                    <SocialLogin></SocialLogin>
                 </Form>
             </div>
         </div>

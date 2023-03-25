@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
+import { Link, useNavigate } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
+
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -8,6 +11,13 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [ confirmpass, setConfirmpass] = useState('');
     const [ error, setError] = useState('');
+    // const [user, setUser] = useState('')
+    
+    // const navigate = useNavigate();
+
+    //  if(user){
+    //     navigate('/home');
+    // }
 
     const auth = getAuth();
     // name
@@ -25,10 +35,6 @@ const Register = () => {
     // confirm password
     const handleConfirmpass = event =>{
         setConfirmpass(event.target.value);
-    }
-    // error
-    const handleError = event=>{
-        setError(event.target.value);
     }
     // verify email
     const verifyEmail = () =>{
@@ -87,7 +93,7 @@ const Register = () => {
                     {/* name */}
                     <Form.Group className="mb-3" controlId="Name">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" onBlur={setUserName} placeholder="Name" />
+                        <Form.Control type="text" onBlur={handleName} placeholder="Name" />
                     </Form.Group>
                     {/* email */}
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -107,12 +113,16 @@ const Register = () => {
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password" onBlur={handleConfirmpass} placeholder="Confirm Password" required />
                     </Form.Group>
-
                     <Button variant="primary" type="submit">
                          Register
                     </Button>
+                    <br /> <br />
+                <p className='text-danger' > {error} </p> 
+                <p>Already have an account? <Link className='txt' to="/login">Login Here</Link></p>
+                <SocialLogin></SocialLogin>
                 </Form>
             </div>
+            <br />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
+import { FaCarSide } from 'react-icons/fa';
+import { Link, useParams } from 'react-router-dom';
 
 const PackageDetails = () => {
     const {id} = useParams();
@@ -34,6 +35,9 @@ const PackageDetails = () => {
                     <p> {pack.dayFourText} </p>
                     <p> <b> {pack.dayFiveTitle} </b> </p>
                     <p> {pack.dayFiveText} </p>
+                    <Link as={Link} to="/shipment" >
+                        <Button size='sm' variant='success'  > <FaCarSide></FaCarSide> Book Now</Button>
+                    </Link>
                 </Card.Body>
             </div>
         </div>

@@ -1,8 +1,9 @@
 import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Alert, Button, Form } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaSignInAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -13,6 +14,15 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const auth = getAuth();
+    const navigate = useNavigate();
+    const[user] = useAuthState(auth);
+
+    // navigate
+    if(user){
+       console.log('user', user);
+         navigate('/shipment');
+   }
+
     // email
     const handleEmail = event => {
         setEmail(event.target.value);
@@ -69,7 +79,7 @@ const Login = () => {
                         <Form.Control type="password" required onBlur={handlePassword} placeholder="Password" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button size="sm" variant="primary" type="submit">
                         <FaSignInAlt></FaSignInAlt> Login
                     </Button> 
                     <br />

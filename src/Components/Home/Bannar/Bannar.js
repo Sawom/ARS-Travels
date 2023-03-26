@@ -13,21 +13,21 @@ const Bannar = () => {
                 <Carousel.Item>
                     <img className="d-block w-100" src={Banner1} alt="First slide" />
                     <Carousel.Caption>
-                    <h5>First slide label</h5>
+                    <h5> The unique beauty of the mountains </h5>
                     </Carousel.Caption>
                 </Carousel.Item>
                 {/* 2 */}
                 <Carousel.Item>
                     <img className="d-block w-100" src={Banner2} alt="Second slide" />
                     <Carousel.Caption>
-                    <h5>Second slide label</h5>
+                    <h5> Watch the sunset at Kuakata </h5>
                     </Carousel.Caption>
                 </Carousel.Item>
                 {/* 3 */}
                 <Carousel.Item>
                     <img className="d-block w-100" src={Banner3} alt="Third slide" />
                     <Carousel.Caption>
-                    <h5>Third slide label</h5>
+                    <h5> Visit the world-famous mangrove forest with us </h5>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

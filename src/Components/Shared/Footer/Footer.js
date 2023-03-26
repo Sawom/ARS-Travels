@@ -1,29 +1,34 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FaFacebook, FaWhatsapp , FaPhone, FaRegEnvelope, FaYoutube , FaTwitter, FaLinkedin, FaAddressCard } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import auth from '../../../Firebase/Firebase';
 import LOGO from '../../../images/logo.png';
 import './Footer.css';
 
+
 const Footer = () => {
+	 const [user] = useAuthState(auth);
     return (
         <div>
             <br />
             <footer className="footer-distributed">
 
 			<div className="footer-left">
-				<img height={200} src={LOGO} alt="" />
 				
-
+				<div>
+                    <span className='txt' > User: {user?.displayName && user.displayName} </span> <br />
+                    <span className='txt' > User id: {user?.uid && user.uid}</span> <br /> <br />
+                </div>
+				<img height={200} src={LOGO} alt="" />
 				<p className="footer-links">
-					<a href="#" className="link-1">Home</a>
-					<a href="#">See All Packages</a>
-					<a href="#">About</a>
-					<a href="#">Faq</a>
+					<Link as={Link} className='menue link-1' to="/home"> Home </Link>
+					<Link as={Link} className='menue ' to="/about"> About </Link>
+					<Link as={Link} className='menue ' to="/packages"> See All Packages  </Link>
 				</p>
-
-				<p className="footer-company-name">Company Name © 2023</p>
 			</div>
 
-			<div className="footer-center">
+			<div className="footer-center pStyle">
 				<p>Contact Us</p>
 				<div className="footer-icons">
 					<a href="#" > <FaAddressCard></FaAddressCard> </a>

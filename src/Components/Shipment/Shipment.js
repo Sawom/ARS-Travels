@@ -109,7 +109,7 @@ const Shipment = () => {
                         <Form.Control onChange={handleInput} required name="date" type="date"  placeholder="Enter date" />
                     </Form.Group>
                     {/* button */}
-                    <Button variant="primary" type="submit">
+                    <Button size='sm' variant="primary" type="submit">
                         Add Shipping
                     </Button>
                 </Form>
@@ -118,13 +118,13 @@ const Shipment = () => {
             <h2 className='App' >Shipment information</h2>
             {/* showing shipment info */}
             <div >
-                <div className='container my-3  '>
+                
+                <div className='container my-3 '>
                     {
                         info.map( shipInfo =>  <ListGroup as="ol" key={shipInfo._id}>
                             <ListGroup.Item
                                 as="li"
-                                className="d-flex justify-content-between align-items-start"
-                            >
+                                className="d-flex justify-content-between align-items-start"  >
                                 <div className="ms-2 me-auto">
                                 <p> <b> Package Code: {shipInfo.packagecode} </b>  </p>
                                 <p > <b> Name: {shipInfo.name} </b>  </p>

@@ -33,7 +33,7 @@ const SocialLogin = () => {
               </div>
               {/* button */}
               <div>
-                <Button onClick={googleLogIn} > <FaGoogle></FaGoogle>  <span>Login with Google</span>  </Button>
+                <Button size="sm" onClick={googleLogIn} > <FaGoogle></FaGoogle>  <span>Login with Google</span>  </Button>
               </div>
         </div>
     );

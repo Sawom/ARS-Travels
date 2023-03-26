@@ -13,7 +13,7 @@ const Footer = () => {
 				<img height={200} src={LOGO} alt="" />
 				
 
-				<p class="footer-links">
+				<p className="footer-links">
 					<a href="#" className="link-1">Home</a>
 					<a href="#">See All Packages</a>
 					<a href="#">About</a>

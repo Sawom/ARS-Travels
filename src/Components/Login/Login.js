@@ -1,8 +1,10 @@
 import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Alert, Button, Form } from 'react-bootstrap';
 import { FaSignInAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 
@@ -18,11 +20,6 @@ const Login = () => {
     // password
     const handlePassword = event => {
         setPassword(event.target.value);
-    }
-    // reset password
-    const handleResetPassword = () => {
-        sendPasswordResetEmail(auth, email)
-        .then(result => { })
     }
     // handle login
     const handleLogin = (email, password)=>{
@@ -40,6 +37,17 @@ const Login = () => {
     const handleUserLogin = event =>{
         event.preventDefault();
         handleLogin(email, password);
+    }
+    // reset password
+    const resetPassword = async () => {
+        if (email) {
+            await sendPasswordResetEmail(auth, email)
+            .then(result =>{})
+            alert('email sent');
+        }
+        else{
+            alert('please enter your email address');
+        }
     }
 
     return (
@@ -69,6 +77,9 @@ const Login = () => {
                      <br />
                     <p>New to ARS Travels? <Link as={Link} className='txt' to="/register">Register Here</Link>  </p>
                     <SocialLogin></SocialLogin>
+                    {/* reset password */}
+                     <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none'
+             onClick={resetPassword}>Reset Password</button> </p>
                 </Form>
             </div>
         </div>

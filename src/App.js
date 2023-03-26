@@ -9,6 +9,8 @@ import Footer from './Components/Shared/Footer/Footer';
 import About from './Components/About/About';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
+import NotFound from './Components/NotFound/NotFound';
+import Shipment from './Components/Shipment/Shipment';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/register' element={ <Register></Register> } ></Route>
         <Route path='/login' element={ <Login></Login> } ></Route>
         <Route path='packinfo/:id' element={ <PackageDetails></PackageDetails> } ></Route>
+        <Route path='/shipment' element={ <Shipment></Shipment> } ></Route>
+        <Route path='*' element={ <NotFound></NotFound> } ></Route>
       </Routes>
       <Footer></Footer> 
     </div>

@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 const Shipment = () => {
     const [error, setError] = useState('');
     const [shipment , setShipment] = useState({});
+
     // date picker
     const [date, setDate] = useState();
+    
     // shipment info loading
     const [info, setInfo] = useState([]);
      useEffect(()=>{
@@ -67,7 +69,12 @@ const Shipment = () => {
         <div>
             <h4 className='App my-4'>Shipment Form</h4>
             <div className='container my-4 center' >
-                <Form onSubmit={handleAddShipment} className='my-4'> 
+                <Form onSubmit={handleAddShipment} className='my-4'>
+                    {/* package code */}
+                    <Form.Group className="mb-3" controlId="formBasicText">
+                        <Form.Label> Package Code </Form.Label>
+                        <Form.Control onChange={handleInput} required name="packagecode" type="number" placeholder="Enter Package Code" />
+                    </Form.Group> 
                     {/* name */}
                     <Form.Group className="mb-3" controlId="formBasicText">
                         <Form.Label>Name</Form.Label>
@@ -108,32 +115,36 @@ const Shipment = () => {
                 </Form>
             </div>
             <br /><br />
-            <h2 className='app' >Shipment information</h2>
+            <h2 className='App' >Shipment information</h2>
             {/* showing shipment info */}
-            <div className='container'>
-                {
-                    info.map( shipInfo =>  <ListGroup as="ol" key={shipInfo._id}>
-                        <ListGroup.Item
-                            as="li"
-                            className="d-flex justify-content-between align-items-start"
-                        >
-                            <div className="ms-2 me-auto">
-                            <div className="fw-bold">Name: {shipInfo.name} </div>
-                             <p>Email: {shipInfo.email} </p>
-                             <p>City: {shipInfo.city} </p>
-                             <p>Address: {shipInfo.address} </p>
-                             <p> Phone: {shipInfo.phoneno }</p>
-                             <p> Date: {shipInfo.date} </p>
-                              <Link to={`/shipment/update/${shipInfo._id}`} >
-                                    <Button variant="success" size='sm' >Update</Button>
-                              </Link> 
-                            <Button className='mx-3' size='sm' variant="danger" onClick={ ()=> handleDelete(shipInfo._id)} >X Delete</Button>
-                            </div>
-                        </ListGroup.Item>
-                        <br />
-                    </ListGroup> )
-                }
+            <div >
+                <div className='container my-3  '>
+                    {
+                        info.map( shipInfo =>  <ListGroup as="ol" key={shipInfo._id}>
+                            <ListGroup.Item
+                                as="li"
+                                className="d-flex justify-content-between align-items-start"
+                            >
+                                <div className="ms-2 me-auto">
+                                <p> <b> Package Code: {shipInfo.packagecode} </b>  </p>
+                                <p > <b> Name: {shipInfo.name} </b>  </p>
+                                <p> Email: {shipInfo.email} </p>
+                                <p> City: {shipInfo.city} </p>
+                                <p> Address: {shipInfo.address} </p>
+                                <p> Phone: {shipInfo.phoneno }</p>
+                                <p> Date: {shipInfo.date} </p>
+                                <Link to={`/shipment/update/${shipInfo._id}`} >
+                                        <Button variant="success" size='sm' >Update</Button>
+                                </Link> 
+                                <Button className='mx-3' size='sm' variant="danger" onClick={ ()=> handleDelete(shipInfo._id)} >X Delete</Button>
+                                </div>
+                            </ListGroup.Item>
+                            <br />
+                        </ListGroup> )
+                    }
+                </div>
             </div>
+            
         </div>
     );
 };

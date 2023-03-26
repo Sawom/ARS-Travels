@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -11,15 +11,16 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [ confirmpass, setConfirmpass] = useState('');
     const [ error, setError] = useState('');
-    // const [user, setUser] = useState('')
-    
-    // const navigate = useNavigate();
-
-    //  if(user){
-    //     navigate('/home');
-    // }
-
     const auth = getAuth();
+    const[user] = useAuthState(auth);
+    
+    const navigate = useNavigate();
+
+     if(user){
+        navigate('/home');
+    }
+
+    
     // name
     const handleName = event =>{
         setName(event.target.value);
@@ -108,7 +109,7 @@ const Register = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" onBlur={handlePassword} placeholder="Password" required />
                     </Form.Group>
-                    {/*  */}
+                    {/* Confirm Password */}
                     <Form.Group className="mb-3" controlId="formConfirmPassword">
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password" onBlur={handleConfirmpass} placeholder="Confirm Password" required />
@@ -118,7 +119,7 @@ const Register = () => {
                     </Button>
                     <br /> <br />
                 <p className='text-danger' > {error} </p> 
-                <p>Already have an account? <Link className='txt' to="/login">Login Here</Link></p>
+                <p>Already have an account? <Link className='btn btn-link text-primary pe-auto text-decoration-none' to="/login">Login Here</Link></p>
                 <SocialLogin></SocialLogin>
                 </Form>
             </div>

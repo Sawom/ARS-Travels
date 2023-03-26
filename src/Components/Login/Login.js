@@ -85,7 +85,7 @@ const Login = () => {
                     <br />
                     <p className='text-danger' > {error} </p> 
                      <br />
-                    <p>New to ARS Travels? <Link as={Link} className='txt' to="/register">Register Here</Link>  </p>
+                    <p>New to ARS Travels? <Link className='btn btn-link text-primary pe-auto text-decoration-none' as={Link}  to="/register">Register Here</Link>  </p>
                     <SocialLogin></SocialLogin>
                     {/* reset password */}
                      <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none'

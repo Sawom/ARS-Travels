@@ -97,7 +97,7 @@ const Update = () => {
                     {/* update package code */}
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Package Code</Form.Label>
-                        <Form.Control onChange={handlePackagecodeChange}  required  defaultValue={update.phoneno || ''} name="phoneno" type="number" placeholder="Phone no" />
+                        <Form.Control onChange={handlePackagecodeChange}  required  defaultValue={update.packagecode || ''} name="phoneno" type="number" placeholder="Phone no" />
                     </Form.Group>
 
                     {/* update name */}
@@ -138,7 +138,7 @@ const Update = () => {
                         <Form.Label>Select Date</Form.Label>
                         <Form.Control onChange={handleDateChange} required defaultValue={update.date || ''} name="date" type="date"  placeholder="Enter date" />
                     </Form.Group>
-                    
+
                     {/*  button */}
                     <Button variant="primary" type="submit">Update</Button>
                     <br /> <br />

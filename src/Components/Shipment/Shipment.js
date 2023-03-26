@@ -8,7 +8,7 @@ const Shipment = () => {
 
     // date picker
     const [date, setDate] = useState();
-    
+
     // shipment info loading
     const [info, setInfo] = useState([]);
      useEffect(()=>{
@@ -40,7 +40,7 @@ const Shipment = () => {
         .then(res => res.json())
         .then(data =>{
            if(data.acknowledged){
-                alert('user added');
+                alert('Shipment Information Added');
                 const refresh = window.location.reload(true);
                 event.target.reset();
            }
@@ -49,7 +49,7 @@ const Shipment = () => {
     }
      // delete
     const handleDelete = id=> {
-        const agree = window.confirm(`are you sure want to delete: ${id}`);
+        const agree = window.confirm(`Are You Sure You Want to Delete: ${id}`);
         if(agree){
             fetch(`http://localhost:5000/shipment/${id}`, {
                 method: 'DELETE'
@@ -57,7 +57,7 @@ const Shipment = () => {
             .then(res => res.json())
             .then(data =>{
                 if(data.deletedCount > 0){
-                    alert('deleted successfully!');
+                    alert('Deleted Successfully!');
                     const remainingShipment = info.filter(inf => inf._id !== id );
                     setInfo(remainingShipment);
                 }

@@ -1,4 +1,4 @@
-## ARS-Travels-Client
+## ARS-Travels-Website
 
 full stack MERN Application <br>
 dynamic router implemented <br>
